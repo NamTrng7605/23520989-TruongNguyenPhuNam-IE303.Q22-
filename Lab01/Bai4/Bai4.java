@@ -2,9 +2,6 @@ package Lab01.Bai4;
 
 import java.util.*;
 
-/**
- * Lớp chứa dữ liệu kết quả của dãy con
- */
 class KetQuaDayCon {
     int maxLen;
     int start;
@@ -17,9 +14,6 @@ class KetQuaDayCon {
     }
 }
 
-/**
- * Lớp chứa thuật toán xử lý chính
- */
 class XuLyDayCon {
     public KetQuaDayCon timDayConDaiNhat(int[] a, int k) {
         Map<Integer, Integer> map = new HashMap<>();
@@ -49,10 +43,7 @@ class XuLyDayCon {
     }
 }
 
-/**
- * Bài 4: Tìm dãy con dài nhất có tổng bằng k
- * Coder: Trương Nguyễn Phú Nam (UIT)
- */
+
 public class Bai4 {
     public static void main(String[] args) {
         Scanner nhap = new Scanner(System.in);
@@ -72,15 +63,13 @@ public class Bai4 {
             a[i] = nhap.nextInt();
         }
 
-        // Khởi tạo đối tượng xử lý và gọi hàm
         XuLyDayCon xuLy = new XuLyDayCon();
         KetQuaDayCon ketQua = xuLy.timDayConDaiNhat(a, k);
 
-        // Xử lý in kết quả
+
         if (ketQua.maxLen == 0) {
             System.out.println("Khong tim thay day con nao co tong bang " + k);
         } else {
-            // Mình giữ nguyên format in theo code của bạn
             System.out.println("Day con dai nhat co tong bang " + k + ":");
             for (int i = ketQua.start; i <= ketQua.end; i++) {
                 System.out.print(a[i] + (i < ketQua.end ? ", " : ""));
